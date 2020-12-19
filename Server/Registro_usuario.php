@@ -45,8 +45,8 @@ if (isset($_POST['registro'])) {
  
         if ($result) {
             echo '<p class="success">Tu registro fue exitoso!</p>';
-            return 
-        } else {
+            return ;
+        }else {
             echo '<p class="error">Algo fue mal!</p>';
         }
     }
