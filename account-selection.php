@@ -37,7 +37,7 @@
 						</div>
 					</div>
 					<div class="col-sm-4" style="margin: auto;">
-						<button class="btn btn-primary">Continuar</button>
+						<a href="welcome/signup_business.php"><button class="btn btn-primary">Continuar</button></a>
 					</div>
 				</div>
 			</div>
