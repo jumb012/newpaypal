@@ -24,7 +24,7 @@
         <div class="bg-white border rounded p-4 py-sm-5 px-sm-5">
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="../resources/logo192.png" alt="paypal" height="34"></a></div>
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px; margin-bottom: 25px">Asociar una cuenta bancaria</h5>
-          <form id="SignUpForm" method="post">
+          <form id="BankAccountForm" method="post">
             <div class="form-group">
               <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Nombre del banco">
               <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Número de cuenta">

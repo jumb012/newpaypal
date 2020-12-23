@@ -30,7 +30,7 @@
           <label><h6 class="display-4" style="font-size: 14px;">
           		PayPal le permite realizar pagos utilizando una variedad de formas de pago.
           </h6></label>
-          <form id="SignUpForm" method="post">
+          <form id="AddCardForm" method="post">
             <div class="form-group">
               <input style="margin-top: 5px" type="text" class="form-control" required placeholder="N.° tarjeta débito o crédito">
               <select style="margin-top: 5px" class="form-control" required>
