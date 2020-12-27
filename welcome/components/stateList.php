@@ -1,4 +1,4 @@
-<select style="margin-top: -10px" class="form-control" required>
+<select id="estados" name="selEstados" style="margin-top: -10px" class="form-control" required>
     <option selected>Seleccione...</option>
     <option>Aguascalientes</option>
 	<option>Baja California </option>

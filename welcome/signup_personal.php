@@ -25,26 +25,26 @@
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="../resources/logo192.png" alt="paypal" height="34"></a></div>
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px">Configure su perfil</h5>
           <h5 class="display-4" style="text-align: center; font-size: 17px; margin-top: 15px; margin-bottom: 20px">Esta información debe ser precisa</h5>
-          <form id="SignUpForm" method="post">
+          <form action="../Server/Registro_usuario.php" method="POST" >
             <div class="form-group">
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Número de celular">
-              <input style="margin-top: 5px" type="email" class="form-control" required placeholder="Correo electrónico">
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Nombres">
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Primer Apellido">
-              <input style="margin-top: 5px" type="text" class="form-control" required placeholder="Apellido materno (opcional)">
-              <input style="margin-top: 5px" type="password" class="form-control" required placeholder="Contraseña">
-              <input style="margin-top: 5px" type="password" class="form-control" required placeholder="Confirmar contraseña">
+              <input style="margin-top: 5px" name="txtTelefono" id="telefono" type="text" class="form-control" required placeholder="Número de celular">
+              <input style="margin-top: 5px" name="txtEmail" id="email" type="email" class="form-control" required placeholder="Correo electrónico">
+              <input style="margin-top: 5px" name="txtNombre" id="nombre" type="text" class="form-control" required placeholder="Nombres">
+              <input style="margin-top: 5px" name="txtApellidoP" id="apellidoP" type="text" class="form-control" required placeholder="Primer Apellido">
+              <input style="margin-top: 5px" name="txtApellidoM" id="apellidoM" type="text" class="form-control" placeholder="Apellido materno (opcional)">
+              <input style="margin-top: 5px" name="txtPassword" id="password"  type="password" class="form-control" required placeholder="Contraseña">
+              <input style="margin-top: 5px" name="txtVpassword" id="vPassword" type="password" class="form-control" required placeholder="Confirmar contraseña">
             </div>
             <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 25px">Agregue su dirección</h5>
           	<h5 class="display-4" style="text-align: center; font-size: 17px; margin-top: 15px; margin-bottom: 20px">Utilice la que aparece en sus recibos</h5>
           	<div class="form-group">
           		<label><h5 class="display-4" style="font-size: 15px;">Fecha de nacimiento:</h5></label>
-          		<input style="margin-top: -5px" type="date" class="form-control" required>
-          		<input style="margin-top: 5px" type="text" class="form-control" required placeholder="Dirección">
-          		<input style="margin-top: 5px" type="text" class="form-control" required placeholder="Colonia">
+          		<input style="margin-top: -5px" name="dateFechaNac" id="fechaNac" type="date" class="form-control" required>
+          		<input style="margin-top: 5px" name="txtDireccion" id="direccion" type="text" class="form-control" required placeholder="Dirección">
+          		<input style="margin-top: 5px" name="txtColonia" id="colonia" type="text" class="form-control" required placeholder="Colonia">
           		<div class="row" style="margin-top: 5px">
-          			<input style="margin-left: 15px" type="text" class="form-control col-4" required placeholder="Código Postal">
-          			<input style="margin-left: 34px" type="text" class="form-control col-6" required placeholder="Ciudad">
+          			<input style="margin-left: 15px" name="txtCodPostal" id="cdPostal" type="text" class="form-control col-4" required placeholder="Código Postal">
+          			<input style="margin-left: 34px" name="txtCiudad" id="ciudad" type="text" class="form-control col-6" required placeholder="Ciudad">
           		</div>
           		<label><h5 class="display-4" style="font-size: 15px;">Estado:</h5></label>
           		<?php include("components/stateList.php") ?>
@@ -57,7 +57,7 @@
           			</h6></label>
           		</div>
           	</div>
-            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Aceptar y crear cuenta</button>
+            <button id="btnRegistrar" class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Aceptar y crear cuenta</button>
           </form>
       	</div>
       </div>
