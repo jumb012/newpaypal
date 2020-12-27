@@ -5,7 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 	<title>Crear una cuenta de PayPal Personal o Empresas</title>
-<!-- Web Fonts
+	<link rel="icon" type="image/png" href="favicon.ico" />
+    <!-- Web Fonts
 ========================= -->
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
 
@@ -16,6 +17,17 @@
 <!--
 ========================= -->
 </head>
+<?php
+session_start();
+if (isset($_SESSION['error'])) {
+  $mensaje=$_SESSION['error'];
+  $style= 'text-align: center; font-size: 17px; margin-top: 15px; margin-bottom: 20px; color:red;';
+  unset($_SESSION['error']);
+}else {
+  $mensaje="Esta información debe ser precisa";
+  $style= "text-align: center; font-size: 17px; margin-top: 15px; margin-bottom: 20px";
+}
+?>
 <body>
 <div id="main-wrapper" class="oxyy-login-register min-vh-100 d-flex flex-column">
   <div class="container my-auto">
@@ -24,7 +36,7 @@
         <div class="bg-white border rounded p-4 py-sm-5 px-sm-5">
           <div class="logo mb-4"> <a class="d-flex justify-content-center" title="paypal"><img src="../resources/logo192.png" alt="paypal" height="34"></a></div>
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px">Configure su perfil</h5>
-          <h5 class="display-4" style="text-align: center; font-size: 17px; margin-top: 15px; margin-bottom: 20px">Esta información debe ser precisa</h5>
+          <h5 class="display-4" style="<?=$style?>"><?=$mensaje?></h5>
           <form action="../Server/Registro_usuario.php" method="POST" >
             <div class="form-group">
               <input style="margin-top: 5px" name="txtTelefono" id="telefono" type="text" class="form-control" required placeholder="Número de celular">

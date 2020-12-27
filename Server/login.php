@@ -1,33 +1,19 @@
 <?php
-session_start(); 
-$error=''; 
-if (isset($_POST['submit'])) {
-if (empty($_POST['Email']) || empty($_POST['Contraseña'])) {
-$error = "Email o contraseña incorrectos";
-}
-else
-{
-$Email=$_POST['Email'];
-$Contraseña=$_POST['Contraseña'];
+	session_start(); 
+	$Correo=$_POST['txtCorreo'];
+	$Contraseña=$_POST['txtContraseña'];
+	include("Conexion.php"); 
+	//$CorreoProtegido = mysqli_real_escape_string($con,(strip_tags($Correo,ENT_QUOTES)));
+	$Password_hash =  md5($Contraseña);
+	$sql = "SELECT COUNT(*) as contar FROM registro_usuario WHERE Correo = '$Correo' and Contraseña='$Contraseña'";
+	$query=mysqli_query($conn,$sql);
+	$array=mysqli_fetch_array($query);
+	if ($array['contar']>0){
+		$_SESSION['Correo']=$Correo;
+		header("location: ../profile.php"); 
+	} else {
+		$_SESSION['error']="Parte de su información no es correcta. Inténtelo de nuevo.";
+		header("location:../signin.php");	
+	}		
 
-include("Conexion.php");
-
-// Para proteger de Inyecciones SQL 
-$Email = mysqli_real_escape_string($con,(strip_tags($Email,ENT_QUOTES)));
-$Contraseña =  password_hash($Contraseña, PASSWORD_BCRYPT);
-
-
-$sql = "SELECT Email, Contraseña FROM registro_usuario WHERE Email = '" . $Email . "' and Contraseña='".$Contraseña."';";
-$query=mysqli_query($con,$sql);
-$counter=mysqli_num_rows($query);
-if ($counter==1){
-		$_SESSION['login_user_sys']=$Email; // Iniciando la sesion
-		header("location: profile.php"); // Redireccionando a la pagina
-	
-	
-} else {
-$error = "El correo electrónico o la contraseña es inválida.";	
-}
-}
-}
 ?>
