@@ -21,7 +21,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item active" style="margin-left: 10px">
                             <a class="nav-link linea" href="summary.php">
-                                Resumen
+                                Resumen 
                             </a>
                         </li>
                         <li class="nav-item active" style="margin-left: 10px">
