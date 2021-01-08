@@ -1,3 +1,29 @@
+<?php  
+  
+  $id_h= $_GET["id_h"];
+  include('../Server/Conexion.php'); // 
+  session_start();
+
+  $sql= "SELECT id FROM registro_usuario where id_h = '$id_h'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+  $id = $fila[0];
+
+ /*$sql= "SELECT Num_tarjeta FROM tarjeta_bancaria where ID = '$id'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+  $numero = $fila[0];
+  $cadena =strval($numero);*/
+  $sql= "SELECT Tipo_tarjeta FROM tarjeta_bancaria where id = '$id'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+  $id = $fila[0];
+
+  //ponlo que tenias del while esta en agenda, esperame
+
+?>
+
+
 <!DOCTYPE html>
 <html ang="es">
 <head>
@@ -36,9 +62,15 @@
             <div class="form-group">
               <label><h5 class="display-4" style="font-size: 15px;">Tarjetas registradas:</h5></label>
               <select style="margin-top: -10px" class="form-control" required> <!-- ESTOS DATOS SON TRAIDOS DE LA BASE DE DATOS -->
-                <option selected>MasterCard<span> ••••</span></span>1234</span></p></option>
-                <option>Visa ••••5678</option>
-                <option>Amex ••••9012</option>
+                <?php 
+  				while ( $registro = $resultado->fetch_object())
+  				{
+
+    			$Tipo_tarjeta=$registro->Tipo_tarjeta;
+    			echo " <option value='$Tipo_tarjeta'>$Tipo_tarjeta</option>";
+  				}
+				?>
+
               </select>
             </div>
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Confirmar</button>
