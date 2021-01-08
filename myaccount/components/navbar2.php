@@ -20,7 +20,7 @@
                     </div>
                     <ul class="navbar-nav">
                         <li class="nav-item active" style="margin-left: 10px">
-                            <a class="nav-link linea subrayado" href="summary.php">
+                            <a class="nav-link linea" href="summary.php">
                                 Resumen
                             </a>
                         </li>
@@ -35,7 +35,7 @@
                             </a>
                         </li>
                         <li class="nav-item active" style="margin-left: 10px">
-                            <a class="nav-link linea" href="#">
+                            <a class="nav-link linea" href="money.php">
                                 Cartera
                             </a>
                         </li>
