@@ -14,7 +14,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     
     <script type="text/javascript" src="resources/navbar2/navbar2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="resources/dash/dash.css">
+    <link rel="stylesheet" type="text/css" href="resources/global/global.css">
     <link rel="stylesheet" type="text/css" href="resources/navbar2/navbar2.css">
 </head>
 <body>

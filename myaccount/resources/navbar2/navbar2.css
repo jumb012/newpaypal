@@ -2,6 +2,12 @@
     background-image: linear-gradient(to right, #009cde, #003087 75%);
     height: 70px;
   }
+.subrayado{
+    border-bottom: 1px solid white !important;
+}
+.linea:hover{
+    border-bottom: 1px solid white !important;
+}
 
 body.offcanvas-active{
     overflow:hidden;

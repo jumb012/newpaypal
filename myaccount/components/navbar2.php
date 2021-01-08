@@ -2,7 +2,7 @@
     <!-- ========================= SECTION CONTENT ========================= -->
     <div class="fondo">
             <nav class="navbar navbar-expand-lg navbar-dark" style="margin-left: 12%; margin-right: 12%;height: 70px">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="summary.php">
                     <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-monotone-transparent.svg" height=30px>
                 </a>
                 <button class="navbar-toggler" data-trigger="#main_nav" type="button">
@@ -19,35 +19,35 @@
                         </h5>
                     </div>
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item active" style="margin-left: 10px">
+                            <a class="nav-link linea subrayado" href="summary.php">
                                 Resumen
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item active" style="margin-left: 10px">
+                            <a class="nav-link linea" href="#">
                                 Movimientos
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item active" style="margin-left: 10px">
+                            <a class="nav-link linea" href="#">
                                 Enviar y solicitar
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item active" style="margin-left: 10px">
+                            <a class="nav-link linea" href="#">
                                 Cartera
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item active" style="margin-left: 10px">
+                            <a class="nav-link linea" href="#">
                                 Ayuda
                             </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item active">
+                            <a class="nav-link linea" href="#" style="font-size: 14px">
                                 CERRAR SESIÓN
                             </a>
                         </li>
