@@ -25,11 +25,11 @@
         <div class="row contenido">
             <div class="col-sm-4"> <!-- Inicia Columna 1 -->
                 <div class="row">
-                    <a class="btn" href="#addBanco">
+                    <a class="btn" href="../banking_services/bank_account.php">
                         <img src="resources/icons/addBankIcon_fiList.svg">
                         <h4 class="h4" style="font-size: 13px; color: #0070ba; margin-top: 20px;">Asociar una cuenta bancaria</h4>
                     </a>
-                    <a class="btn" href="#addTarjeta">
+                    <a class="btn" href="../banking_services/add_card.php">
                         <img src="resources/icons/addCardIcon.svg">
                         <h4 class="h4" style="font-size: 13px; color: #0070ba; margin-top: 20px;">Asociar tarjeta</h4>
                     </a>

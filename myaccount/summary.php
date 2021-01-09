@@ -17,6 +17,14 @@
     <link rel="stylesheet" type="text/css" href="resources/global/global.css">
     <link rel="stylesheet" type="text/css" href="resources/navbar2/navbar2.css">
 </head>
+<?php 
+    session_start();
+    $Correo=$_SESSION['Correo'];
+    $Nombre=$_SESSION['Nombre'];
+    if(!isset($Correo)){
+        header("location: Server/login.php");
+    }
+?>   
 <body>
 	<header class="fijado">
 	<?php include("components/navbar2.php"); ?>
@@ -24,7 +32,7 @@
     <section class="contenedor container">
         <div class="row contenido">
             <div class="col-sm-7"> <!-- Inicia Columna 1 -->
-                <label><h1 class="display-4" style="font-size: 30px; font-weight: 400">Hola, <span>Jassiel</span></h1></label>
+                <label><h1 class="display-4" style="font-size: 30px; font-weight: 400">Hola, <span><?= $Nombre?></span></h1></label>
                 <div class="row">
                     <div class="col-lg-11 cmp" style="padding-left: 25px; padding-right: 25px">
                         <a class="btn" href="#"><h5 class="h6" style="color: #0070ba; margin-top: 10px">Nuevos pagos recibidos</h5></a>
