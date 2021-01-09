@@ -9,18 +9,8 @@
   $fila= $resultado->fetch_row();
   $id = $fila[0];
 
- /*$sql= "SELECT Num_tarjeta FROM tarjeta_bancaria where ID = '$id'"; 
+  $sql= "SELECT Tipo_tarjeta,Num_tarjeta FROM tarjeta_bancaria where id = '$id'"; 
   $resultado= mysqli_query($conn,$sql);
-  $fila= $resultado->fetch_row();
-  $numero = $fila[0];
-  $cadena =strval($numero);*/
-  $sql= "SELECT Tipo_tarjeta FROM tarjeta_bancaria where id = '$id'"; 
-  $resultado= mysqli_query($conn,$sql);
-  $fila= $resultado->fetch_row();
-  $id = $fila[0];
-
-  //ponlo que tenias del while esta en agenda, esperame
-
 ?>
 
 
@@ -58,22 +48,22 @@
                 pagos por artículos y servicios. Sin embargo, a la hora de pagar podrá
                 elegir otra forma de pago.
           </h6></label>
-          <form id="VerifyCardForm" method="post">
+          <form id="VerifyCardForm" method="post" action="../Server/seleccionar_pago.php">
             <div class="form-group">
               <label><h5 class="display-4" style="font-size: 15px;">Tarjetas registradas:</h5></label>
-              <select style="margin-top: -10px" class="form-control" required> <!-- ESTOS DATOS SON TRAIDOS DE LA BASE DE DATOS -->
-                <?php 
-  				while ( $registro = $resultado->fetch_object())
-  				{
+              <select style="margin-top: -10px" class="form-control" name="Num_tarjeta" required> <!-- ESTOS DATOS SON TRAIDOS DE LA BASE DE DATOS -->
+              <?php  
+                while($ver=mysqli_fetch_row($resultado)){ 
 
-    			$Tipo_tarjeta=$registro->Tipo_tarjeta;
-    			echo " <option value='$Tipo_tarjeta'>$Tipo_tarjeta</option>";
-  				}
-				?>
-
+				$Digitos = substr($ver[1], -4);
+				echo " <option value='$ver[1]'>$ver[0] ••••$Digitos</option>";
+     			} 
+     		?>
               </select>
             </div>
-            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Confirmar</button>
+            <input type="hidden" name="ID" value="<?php echo $id?>">
+            <input type="hidden" name="id_h" value="<?php echo $id_h?>">
+            <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit" name="seleccionar">Confirmar</button>
           </form>
       	</div>
       </div>
