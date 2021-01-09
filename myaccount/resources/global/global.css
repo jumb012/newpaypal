@@ -84,6 +84,24 @@ body{
     height: 40px;
 }
 
+.nav_eys{
+    background-color: white;
+    height: 60px;
+    margin-top: 70px;
+    align-content: center;
+    border-bottom: .5px solid rgba(218, 213, 213, 0.685);
+}
+.eys-op{
+    margin-left: 70px;
+    width: 100px;
+    height: 60px;
+    display: grid;
+    place-items:center;
+}
+.actual{
+    border-bottom: 2px solid #0070ba;
+}
+
 @media (max-width: 992px){
     .icon_rebajas{
         background-color: #0086e2;
@@ -102,5 +120,8 @@ body{
         position: relative;  
         margin-top: 15px;
         margin-left: 15px;
+    }
+    .eys-op{
+        margin-left: 0px;
     }
 }

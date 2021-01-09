@@ -68,6 +68,7 @@
                 <label><h1 class="display-4" style="font-size: 18px; font-weight: 400;padding-right: 30px">
                     Consulte los pagos enviados y recibidos.<br> Aquí encontrará sus movimientos recientes con PayPal.
                 </h1></label>
+                <a href="#">Ver todos los movimientos</a>
             </div> <!-- Termina Columna 2 -->
         </div>
     </section>
