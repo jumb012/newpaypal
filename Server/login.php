@@ -8,9 +8,14 @@
 	$sql = "SELECT COUNT(*) as contar FROM registro_usuario WHERE Correo = '$Correo' and Contraseña='$Contraseña'";
 	$query=mysqli_query($conn,$sql);
 	$array=mysqli_fetch_array($query);
+	$sql2= "SELECT * FROM registro_usuario WHERE Correo = '$Correo' and Contraseña='$Contraseña'";
+	$query2=mysqli_query($conn,$sql2);
+	$datos=mysqli_fetch_array($query2);
 	if ($array['contar']>0){
 		$_SESSION['Correo']=$Correo;
-		header("location: ../profile.php"); 
+		$_SESSION['Nombre']=$datos['Nombre'];
+		$_SESSION['Summary']=TRUE;
+		header("location: ../myaccount/summary.php"); 
 	} else {
 		$_SESSION['error']="Parte de su información no es correcta. Inténtelo de nuevo.";
 		header("location:../signin.php");	

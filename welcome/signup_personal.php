@@ -69,6 +69,7 @@ if (isset($_SESSION['error'])) {
           			</h6></label>
           		</div>
           	</div>
+            <input type="hidden" name="tipoCuenta" value="1">
             <button id="btnRegistrar" class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Aceptar y crear cuenta</button>
           </form>
       	</div>
