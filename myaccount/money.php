@@ -16,6 +16,7 @@
     <script type="text/javascript" src="resources/navbar2/navbar2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="resources/global/global.css">
     <link rel="stylesheet" type="text/css" href="resources/navbar2/navbar2.css">
+    <link rel="stylesheet" type="text/css" href="resources/global/listado_tarjetas.css">
 </head>
 <body>
 	<header class="fijado">
@@ -34,8 +35,8 @@
                         <h4 class="h4" style="font-size: 13px; color: #0070ba; margin-top: 20px;">Asociar tarjeta</h4>
                     </a>
                 </div>
-                <div class="row" style="margin-top: 50px">
-                    <div class="list-group" id="list-tab" role="tablist" style="width: 90%">
+                <div style="margin-top: 50px">
+                    <div class="list-group" id="list-tab" role="tablist">
                         <a class="list-group-item list-group-item-action active" id="list-bank-list" data-toggle="list" href="#list-bank" role="tab" aria-controls="card">
                             <div class="row">
                                 <div class="col-4" style="margin-top: 5px">
@@ -61,27 +62,41 @@
                     </div>
                 </div>
             </div> <!-- Termina Columna 1 -->
-            <div class="col-sm-8" style="background-color: white; margin-top: -50px"> <!-- Inicia Columna 2 -->
-                <div class="row" style="margin-top: 60px">
-                    <div class="tab-content" id="nav-tabContent" style="width: 100%">
-                        <div class="tab-pane fade show active" id="list-bank" role="tabpanel" aria-labelledby="list-bank-list">
-                            <div style="
-                            height: 200px;
-                            width: 340px;
-                            background-image: url('resources/images/generic_bank.webp');
-                            background-size: cover;
-                            background-position: right;
-                            background-repeat: no-repeat;
-                            border-radius: 20px;
-                            border: 2px solid black;
-                            margin-left: 150px;
-                            margin-top: 20px;
-                            position: relative;
-                            ">
-                                <h6 style="bottom: 2px; left:15px;position: absolute;">••••5430</h6>
+            <div class="col-sm-8"> <!-- Inicia Columna 2 -->
+                <div style="margin-top: 30px">
+                    <div class="tab-content" id="nav-tabContent">
+<!-- Cuenta Bancaria --><div class="tab-pane fade show active" id="list-bank" role="tabpanel" aria-labelledby="list-bank-list">
+                            <div style="display: grid; place-items:center;">
+                                <div class="info_bank"> 
+                                    <h6 style="bottom: 2px; left:15px;position: absolute;">••••5430</h6>
+                                </div>
+                            </div>
+                            <div style="margin-top: 50px; text-align: center;">
+                                <h4 class="display-4" style="font-size: 20px">BANCO SANTANDER</h4>
+                                <h4 class="display-4" style="font-size: 20px; margin-bottom: 30px">Cuenta ••••5430</h4>
+                                <hr style="width: 55%">
+                                <h4 class="h4" style="font-size: 14px;">Transferencias automáticas<p class="display-4" style="font-size: 20px;">si</p></h4>
+                                <label><a href="#">Actualización</a><a href="#" style="margin-left: 20px">Eliminar</a></label>
+                                <hr style="width: 55%">
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="list-card" role="tabpanel" aria-labelledby="list-card-list">Tarjeta</div>
+<!-- Para la Tarjeta --><div class="tab-pane fade" id="list-card" role="tabpanel" aria-labelledby="list-card-list">
+                            <div style="display: grid; place-items:center;">
+                                <div class="info_tarjeta">
+                                    <img style="position: absolute; top: 65px; left: 110px" src="resources/images/mastercard.png" height="50px">
+                                    <h6 style="bottom: 2px; left:15px;position: absolute;color: white">••••3312</h6>
+                                </div>
+                            </div>
+                            <div style="margin-top: 50px; text-align: center;">
+                                <h4 class="display-4" style="font-size: 25px">Tarjeta MasterCard</h4>
+                                <h4 class="display-4" style="font-size: 20px; margin-bottom: 30px;">••••3312</h4>
+                                <hr style="width: 55%">
+                                <h4 class="h4" style="font-size: 14px;">Fecha de vencimiento<p class="display-4" style="font-size: 20px;">03/28</p></h4>
+                                <h4 class="h4" style="font-size: 14px;">Preferida</h4>
+                                <label><a href="#">Actualización</a><a href="#" style="margin-left: 20px">Eliminar</a></label>
+                                <hr style="width: 55%">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div> <!-- Termina Columna 2 -->

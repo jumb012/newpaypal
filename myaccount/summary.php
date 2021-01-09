@@ -27,7 +27,7 @@
                 <label><h1 class="display-4" style="font-size: 30px; font-weight: 400">Hola, <span>Jassiel</span></h1></label>
                 <div class="row">
                     <div class="col-lg-11 cmp" style="padding-left: 25px; padding-right: 25px">
-                        <a class="btn" href="#"><h5 class="h6" style="color: #0070ba; margin-top: 10px">Nuevos pagos recibidos</h5></a>
+                        <a class="btn" href="money.php"><h5 class="h6" style="color: #0070ba; margin-top: 10px">Nuevos pagos recibidos</h5></a>
                         <br>
                         <label><h3 class="display-4" style="font-size: 50px; margin-top: -10px;margin-bottom: -7px">$0.00</h3></label>
                         <br>
