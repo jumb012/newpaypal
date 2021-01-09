@@ -60,6 +60,7 @@
                 </div>
               </div>
             </div>
+            <input type="hidden" name="id_h" value="<?php echo $id_h ?>">
             <input type="hidden" name="Estatus" value="Activo">
             <input type="hidden" name="ID" value="<?php echo $fila[0] ?>">
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" name="registro" type="submit">Asociar tarjeta</button>
