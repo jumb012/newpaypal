@@ -42,7 +42,35 @@
                     </form></div>
                 </div>
             </div> <!-- Termina Columna 1 -->
-            <div class="col-sm-5"> <!-- Inicia Columna 2 -->
+            <div class="col-sm-4" style="margin-left: 20px"> <!-- Inicia Columna 2 -->
+                <div class="row" style="background-color: white; height: 100%; border-radius: 5px;">
+                    <div class="col" style="margin: 20px">
+                        <h6 class="h4" style="text-align: center; font-size: 15px">Su perfil</h6>
+                        <hr>
+                        <div style="display: grid; place-items:center;">
+                            <img src="https://ui-avatars.com/api/?name=Jassiel+Martinez&background=random" style="border-radius: 50%; margin-top: 20px">
+                        </div>
+                        <h4 class="display-4" style="text-align: center; font-size: 22px; margin-top: 20px">Jassiel Martinez</h4>
+                        <h4 class="h4" style="color: #0070ba;text-align: center; font-size: 15px">@JassielMartinez</h4>
+                        <h4 style="text-align: center; margin-top: 30px">
+                            <button class="btn btn-outline-primary" style="border-radius: 30px" data-toggle="modal" data-target="#PaypalMeModal">Administrar perfil</button>
+                        </h4>
+                    </div>
+                </div>
+                <div class="modal fade" id="PaypalMeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Su PayPal.Me</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                             </div>
+                        </div>
+                    </div>
+                </div>
             </div> <!-- Termina Columna 2 -->
         </div>
     </section>
