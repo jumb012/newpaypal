@@ -51,7 +51,7 @@
 			<img src="https://cdn.freebiesupply.com/logos/large/2x/visa-logo-black-and-white.png" height="70px">-->
 			<img src="https://www.paypalobjects.com/digitalassets/c/website/marketing/latam/mx/account-selection/2018_redesign/context/img_mx-cards_logo.png" height="25px">
 		</div>
-    	<p class="text-center text-1 mb-0" style="color: white">Copyright © 2020 <a href="/newpaypal">PayPal</a>. All Rights Reserved.</p>
+    	<p class="text-center text-1 mb-0" style="color: white">Copyright © <?php echo date("Y")?> <a href="/newpaypal">PayPal</a>. All Rights Reserved.</p>
   	</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
