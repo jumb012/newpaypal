@@ -63,11 +63,11 @@
             </div> <!-- Termina Columna 1 -->
             <div class="col-sm-5"> <!-- Inicia Columna 2 -->
                 <div class="row" style="margin-top: 20px">
-                    <a href="#enviar" style="margin-left: 20px">
+                    <a href="./transfer/pay.php" style="margin-left: 20px">
                         <section style="height: 50px; width: 50px; background-color: rgb(0, 94, 166); border-radius: 50%; display: grid; align-items: center;"><div class="icon_enviar" style="margin-left: 5px"></div></section>
                         <h6 class="h6" style="margin-left: 3px; color: black">Enviar</h6>
                     </a>
-                    <a href="#Solicitar" style="margin-left: 70px">
+                    <a href="./transfer/request.php" style="margin-left: 70px">
                         <section style="margin-left: 3px;height: 50px; width: 50px; background-color: rgb(0, 94, 166); border-radius: 50%; display: grid; align-items: center;"><div class="icon_solicitar" style="margin-left: 5px"></div></section>
                         <h6 class="h6" style="color: black">Solicitar</h6>
                     </a>

@@ -42,11 +42,12 @@ session_start();
           <h5 class="display-4" style="<?=$style?>"><?= $mensaje?></h5>
           <form action="Server/login.php" id="loginForm" method="POST">
             <div class="form-group">
-              <input name="txtCorreo" type="email" class="form-control" id="correoElectronico" required placeholder="Correo electrónico o número de celular">
+              <input name="txtEmail" type="email" class="form-control" id="correoElectronico" required placeholder="Correo electrónico o número de celular">
             </div>
             <div class="form-group">
-              <input name="txtContraseña" type="password" class="form-control" id="loginPassword" required placeholder="Contraseña">
+              <input name="txtPassword" type="password" class="form-control" id="loginPassword" required placeholder="Contraseña">
             </div>
+            <input type="hidden" name="Login" value="1">
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Iniciar sesión</button>
           </form>
           <p class="text-center text-2 mb-2"><a class="btn-link" href="pass_recovery.php">¿Tiene problemas para iniciar sesión?</a></p>
