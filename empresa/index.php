@@ -29,7 +29,7 @@
             <div class="container">
                 <!-- Logo container-->
                 <div>
-                    <a class="logo" href="index.html">
+                    <a class="logo" href="index.php">
                         <img src="images/Logo_Azul.png" height="35" alt="">
                     </a>
                 </div>                 

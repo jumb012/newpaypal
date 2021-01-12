@@ -86,7 +86,7 @@
                                                     </div><!--end col-->
 
                                                     <div class="col-lg-12 mb-0">
-                                                        <button class="btn btn-primary btn-block">Iniciar</button>
+                                                        <a href="home.php" class="btn btn-primary btn-block">Iniciar</a>
                                                     </div><!--end col-->
                                                 </div><!--end row-->
                                             </form>
@@ -97,7 +97,7 @@
                         </div> <!-- end about detail -->
                     </div> <!-- end col -->    
 
-                    <div class="col-lg-8 offset-lg-4 padding-less img order-1" style="background-image:url('https://source.unsplash.com/2000x1333/?bussines,work,office')" data-jarallax='{"speed": 0.5}'></div><!-- end col -->    
+                    <div class="col-lg-8 offset-lg-4 padding-less img order-1" style="background-image:url('https://source.unsplash.com/1000x666/?bussines,work,office')" data-jarallax='{"speed": 0.5}'></div><!-- end col -->    
                 </div><!--end row-->
             </div><!--end container fluid-->
         </section><!--end section-->
