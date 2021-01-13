@@ -53,14 +53,14 @@
                                                 <img src="images/Logo_Azul.png" height="35">
                                             </div>
                                             <h4 class="card-title text-center">Inicio de Sesión</h4>  
-                                            <form class="login-form mt-4">
+                                            <form class="login-form mt-4" method="POST" action="../Server/login.php">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
                                                             <label>Usuario<span class="text-danger">*</span></label>
                                                             <div class="position-relative">
                                                                 <i data-feather="user" class="fea icon-sm icons"></i>
-                                                                <input type="text" class="form-control pl-5" placeholder="Usuario" name="email" required="">
+                                                                <input type="text" class="form-control pl-5" placeholder="Usuario" name="txtEmail" required>
                                                             </div>
                                                         </div>
                                                     </div><!--end col-->
@@ -70,7 +70,7 @@
                                                             <label>Contraseña <span class="text-danger">*</span></label>
                                                             <div class="position-relative">
                                                                 <i data-feather="key" class="fea icon-sm icons"></i>
-                                                                <input type="password" class="form-control pl-5" placeholder="Contraseña" required="">
+                                                                <input type="password" name='txtPassword' class="form-control pl-5" placeholder="Contraseña" required>
                                                             </div>
                                                         </div>
                                                     </div><!--end col-->
@@ -84,9 +84,9 @@
                                                             <p class="forgot-pass mb-0"><a href="#" class="text-dark font-weight-bold">Olvido su contraseña?</a></p>
                                                         </div>
                                                     </div><!--end col-->
-
+                                                    <input type="hidden" name="Login" value="2">
                                                     <div class="col-lg-12 mb-0">
-                                                        <a href="home.php" class="btn btn-primary btn-block">Iniciar</a>
+                                                        <button class="btn btn-primary btn-block" type="submit">Iniciar</button>
                                                     </div><!--end col-->
                                                 </div><!--end row-->
                                             </form>

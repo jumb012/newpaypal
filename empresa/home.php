@@ -23,7 +23,15 @@
         <link rel="stylesheet" type="text/css" href="css/elemento_flotante.css">
 
     </head>
-
+    <?php
+    include('../Server/Conexion.php');
+    session_start();
+    $Correo=$_SESSION['Correo'];
+    $Nombre=$_SESSION['Nombre'];
+    $Ap_pat=$_SESSION['Ap_pat'];
+    if(!isset($Correo)){
+        header("location: login.php");
+    }?>
     <body>        
         <!-- Navbar STart -->
         <header id="topnav" class="defaultscroll sticky">
@@ -67,7 +75,7 @@
                 <div class="row mt-5 align-items-center">
                     <div class="col-lg-7 col-md-7">
                         <div class="title-heading container">
-                            <h1 class="heading mb-3"> Hola! qué tal?<br> <span class="text-primary">Elon Musk</span> </h1>
+                            <h1 class="heading mb-3"> Hola! qué tal?<br> <span class="text-primary"><?=$Nombre?></span> </h1>
                             <div class="row">
                             	<div class="col-sm-4 flotante">
                             		<h6 class="h4 text-primary">Ganancias</h6>

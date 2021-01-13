@@ -58,6 +58,7 @@ if (isset($_SESSION['error'])) {
           			<input style="margin-left: 15px" name="txtCodPostal" id="cdPostal" type="text" class="form-control col-4" required placeholder="Código Postal">
           			<input style="margin-left: 34px" name="txtCiudad" id="ciudad" type="text" class="form-control col-6" required placeholder="Ciudad">
                 <input type="text" name="txtTipoCuenta" value="1" hidden="">
+                <input type="text" name="Login" value="1" hidden="">
           		</div>
           		<label><h5 class="display-4" style="font-size: 15px;">Estado:</h5></label>
           		<?php include("components/stateList.php") ?>

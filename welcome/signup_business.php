@@ -69,6 +69,7 @@
           		</div>
           	</div>
             <input type="hidden" name="txtTipoCuenta" value="2">
+			<input type="text" name="Login" value="1" hidden="">
             <button class="btn btn-primary btn-block shadow-none mt-4 mb-3" type="submit">Aceptar y crear cuenta</button>
           </form>
       	</div>

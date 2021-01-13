@@ -51,10 +51,6 @@
                     </div>
                 </div>
         
-                <div id="navigation"> 
-                    <div class="buy-menu-btn d-none">
-                        <a href="#" target="_blank" class="btn btn-primary">Iniciar Sesión</a>
-                    </div><!--end login button-->
                 </div><!--end navigation-->
             </div><!--end container-->
         </header><!--end header-->
@@ -69,7 +65,7 @@
                             <h1 class="heading mb-3">Nuestra creatividad es tu <span class="text-primary">Éxito</span> </h1>
                             <p class="para-desc text-muted">Visita nuestra página oficial para enviar y recibir dinero</p>
                             <div class="mt-4">
-                                <a href="#" class="btn btn-primary mt-2 mr-2"><i class="mdi mdi-email"></i> PayPal.com</a>
+                                <a href="../" class="btn btn-primary mt-2 mr-2"><i class="mdi mdi-email"></i> PayPal.com</a>
                             </div>
                         </div>
                     </div><!--end col-->

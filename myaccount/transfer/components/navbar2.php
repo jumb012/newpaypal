@@ -47,7 +47,7 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link linea" href="../Server/logout.php" style="font-size: 14px">
+                            <a class="nav-link linea" href="../../Server/logout.php" style="font-size: 14px">
                                 CERRAR SESIÓN
                             </a>
                         </li>
