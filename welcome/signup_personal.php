@@ -14,6 +14,9 @@
 ========================= -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../resources/css/stylesheet.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="CheckPassword.js"></script>
 <!--
 ========================= -->
 </head>
@@ -28,7 +31,7 @@ if (isset($_SESSION['error'])) {
   $style= "text-align: center; font-size: 17px; margin-top: 15px; margin-bottom: 20px";
 }
 ?>
-<body>
+<body>  
 <div id="main-wrapper" class="oxyy-login-register min-vh-100 d-flex flex-column">
   <div class="container my-auto">
     <div class="row">
@@ -44,8 +47,8 @@ if (isset($_SESSION['error'])) {
               <input style="margin-top: 5px" name="txtNombre" id="nombre" type="text" class="form-control" required placeholder="Nombres">
               <input style="margin-top: 5px" name="txtApellidoP" id="apellidoP" type="text" class="form-control" required placeholder="Primer Apellido">
               <input style="margin-top: 5px" name="txtApellidoM" id="apellidoM" type="text" class="form-control" placeholder="Apellido materno (opcional)">
-              <input style="margin-top: 5px" name="txtPassword" id="password"  type="password" class="form-control" required placeholder="Contraseña">
-              <input style="margin-top: 5px" name="txtVpassword" id="vPassword" type="password" class="form-control" required placeholder="Confirmar contraseña">
+              <input style="margin-top: 5px" name="txtPassword" id="password"  type="password" class="form-control" required placeholder="Contraseña" minlength='8'>
+              <input style="margin-top: 5px" name="txtVpassword" id="vPassword" type="password" class="form-control" required placeholder="Confirmar contraseña" minlength='8'>
             </div>
             <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 25px">Agregue su dirección</h5>
           	<h5 class="display-4" style="text-align: center; font-size: 17px; margin-top: 15px; margin-bottom: 20px">Utilice la que aparece en sus recibos</h5>

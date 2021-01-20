@@ -1,6 +1,6 @@
 <?php
 include('Conexion.php');
-
+session_start();
 if(isset($_POST['txtEmail'])){
     $Correo = $_POST['txtEmail'];
     $Nombre = $_POST['txtNombre'];
@@ -19,13 +19,24 @@ if(isset($_POST['txtEmail'])){
         $Ap_Pat = $_POST['txtApellidoP'];
         $Ap_Mat = $_POST['txtApellidoM'];
         $Fecha_nacimiento = $_POST['dateFechaNac'];        
-        $sql= "INSERT INTO registro_usuario(Num_telefono,Correo,Nombre,Ap_pat,Ap_mat,Contraseña,Fecha_nacimiento,Direccion,Colonia,Codigo_postal,Ciudad,Estado,Tipo_Cuenta,id_h) 
-        VALUES ('$Num_telefono','$Correo','$Nombre','$Ap_Pat','$Ap_Mat','$Contraseña_h','$Fecha_nacimiento','$Direccion','$Colonia','$Codigo_postal','$Ciudad','$Estado','$TipoCuenta','$id_h')";    
-        if ($conn->query($sql)===TRUE) {
-            header("Location:../signin.php");
-        }else{
-            $_SESSION['error']="Ha ocurrido un error al registrar su cuenta, intentelo de nuevo.";
+        $sql2= "SELECT * FROM registro_usuario";
+		$query2=mysqli_query($conn,$sql2);
+		$datos=mysqli_fetch_array($query2);
+        if ($datos['Correo']== $Correo) {
+            $_SESSION['error']="El correo ya existe, intente con uno diferente.";
             header('Location:../welcome/signup_personal.php');
+        } else if ($datos['Telefono']== $Num_telefono) {
+            $_SESSION['error']="El número de teléfono ya existe, intente con uno diferente.";
+            header('Location:../welcome/signup_personal.php');
+        }else{
+            $sql= "INSERT INTO registro_usuario(Num_telefono,Correo,Nombre,Ap_pat,Ap_mat,Contraseña,Fecha_nacimiento,Direccion,Colonia,Codigo_postal,Ciudad,Estado,Tipo_Cuenta,id_h) 
+            VALUES ('$Num_telefono','$Correo','$Nombre','$Ap_Pat','$Ap_Mat','$Contraseña_h','$Fecha_nacimiento','$Direccion','$Colonia','$Codigo_postal','$Ciudad','$Estado','$TipoCuenta','$id_h')";    
+            if ($conn->query($sql)===TRUE) {
+                header("Location:../signin.php");
+            }else{
+                $_SESSION['error']="Ha ocurrido un error al registrar su cuenta, intentelo de nuevo.";
+                header('Location:../welcome/signup_personal.php');
+            }
         }
     }else{
         $TipoCuenta="Empresarial";
@@ -37,13 +48,27 @@ if(isset($_POST['txtEmail'])){
             $MSIR = '0';
         }
         $VentasMensuales = $_POST['selVentas'];
-        $sql= "INSERT INTO registro_usuario(Correo,Nombre,Contraseña,Direccion,Colonia,Codigo_postal,Ciudad,Estado,Tipo_Cuenta,id_h,Ventas_Mensuales,MSI,RFC) 
-        VALUES ('$Correo','$Nombre','$Contraseña_h','$Direccion','$Colonia','$Codigo_postal','$Ciudad','$Estado','$TipoCuenta','$id_h','$VentasMensuales','$MSIR','$RFC')";    
-        if ($conn->query($sql)===TRUE) {
-            header("Location:../signin.php");
+        $sql2= "SELECT * FROM registro_usuario";
+		$query2=mysqli_query($conn,$sql2);
+		$datos=mysqli_fetch_array($query2);
+        if ($datos['Correo']== $Correo) {
+            $_SESSION['error']="El correo ya existe, intente con uno diferente.";
+            header('Location:../welcome/signup_business.php');
+        } else if ($datos['RFC']== $RFC) {
+            $_SESSION['error']="El número de RFC y existe, intente con uno diferente.";
+            header('Location:../welcome/signup_business.php');
+        }elseif ($datos['Nombre']== $Nombre) {
+            $_SESSION['error']="El nombre de la empresa ya se encuentra registrado, intente con uno diferente.";
+            header('Location:../welcome/signup_business.php');
         }else{
-            $_SESSION['error']="Ha ocurrido un error al registrar su cuenta, intentelo de nuevo.";
-           header('Location:../welcome/signup_personal.php');
+            $sql= "INSERT INTO registro_usuario(Correo,Nombre,Contraseña,Direccion,Colonia,Codigo_postal,Ciudad,Estado,Tipo_Cuenta,id_h,Ventas_Mensuales,MSI,RFC) 
+            VALUES ('$Correo','$Nombre','$Contraseña_h','$Direccion','$Colonia','$Codigo_postal','$Ciudad','$Estado','$TipoCuenta','$id_h','$VentasMensuales','$MSIR','$RFC')";    
+            if ($conn->query($sql)===TRUE) {
+                header("Location:../signin.php");
+            }else{
+                $_SESSION['error']="Ha ocurrido un error al registrar su cuenta, intentelo de nuevo.";
+                header('Location:../welcome/signup_business.php');
+            }
         }
     }
     

@@ -30,7 +30,6 @@
 		}
 	} else {
 		$_SESSION['error']="Parte de su información no es correcta. Inténtelo de nuevo.";
-		//header("location:../signin.php");
-		var_dump($query2);	
+		header("location:../signin.php");
 	}		
 ?>
