@@ -2,7 +2,7 @@
     <!-- ========================= SECTION CONTENT ========================= -->
     <div class="fondo">
             <nav class="navbar navbar-expand-lg navbar-dark" style="margin-left: 12%; margin-right: 12%;height: 70px">
-                <a class="navbar-brand" href="summary.php">
+                <a class="navbar-brand" href="../summary.php">
                     <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-monotone-transparent.svg" height=30px>
                 </a>
                 <button class="navbar-toggler" data-trigger="#main_nav" type="button">
@@ -17,22 +17,22 @@
                     </div>
                     <ul class="navbar-nav">
                         <li class="nav-item active" style="margin-left: 10px">
-                            <a class="nav-link linea" href="summary.php">
+                            <a class="nav-link linea" href="../summary.php">
                                 Resumen
                             </a>
                         </li>
                         <li class="nav-item active" style="margin-left: 10px">
-                            <a class="nav-link linea" href="transactions.php">
+                            <a class="nav-link linea" href="../transactions.php">
                                 Movimientos
                             </a>
                         </li>
                         <li class="nav-item active" style="margin-left: 10px">
-                            <a class="nav-link linea" href="transfer/pay.php">
+                            <a class="nav-link linea" href="../transfer/pay.php">
                                 Enviar y solicitar
                             </a>
                         </li>
                         <li class="nav-item active" style="margin-left: 10px">
-                            <a class="nav-link linea" href="money.php">
+                            <a class="nav-link linea" href="../money.php">
                                 Cartera
                             </a>
                         </li>
@@ -49,7 +49,7 @@
                             </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link linea" href="../Server/logout.php" style="font-size: 14px">
+                            <a class="nav-link linea" href="../../Server/logout.php" style="font-size: 14px">
                                 CERRAR SESIÓN
                             </a>
                         </li>

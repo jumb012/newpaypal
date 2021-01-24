@@ -47,7 +47,18 @@
                     </form></div>
                 </div>
             </div> <!-- Termina Columna 1 -->
-            <div class="col-sm-5"> <!-- Inicia Columna 2 -->
+            <div class="col"></div>
+            <div class="col-sm-4"> <!-- Inicia Columna 2 -->
+                <a href="../invoice/manage.php">
+                    <div class="row">
+                    <div class="col-2">
+                        <img src="../resources/icons/invoice.svg" height="40px" style="border: 2px solid; border-radius: 50%;">
+                    </div>
+                    <div class="col" style="color: black;">
+                        <h6>Crear formato de pago</h6>
+                        <p style="font-size: 14px">Personalice, rastree y envíe formatos de pago.</p>
+                    </div></div>
+                </a>
             </div> <!-- Termina Columna 2 -->
         </div>
     </section>

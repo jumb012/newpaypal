@@ -18,9 +18,11 @@
     <link rel="stylesheet" type="text/css" href="../resources/navbar2/navbar2.css">
 </head>
 <body>
-    <script type="text/javascript">$(function () {
-  $('[data-toggle="popover"]').popover()
-})</script>
+    <script type="text/javascript">
+    	$(function () {
+  			$('[data-toggle="popover"]').popover()
+		})
+	</script>
 	<header class="fijado">
 	<?php include("components/navbar2.php"); ?>
     </header>
