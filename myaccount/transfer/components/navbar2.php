@@ -49,6 +49,11 @@
                             </a>
                         </li>
                         <li class="nav-item active">
+                            <a class="nav-link" style="font-size: 14px">
+                                <img src="https://www.paypalobjects.com/ui-web/icons/1-0-0/settings.svg" height=25px>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
                             <a class="nav-link linea" href="../../Server/logout.php" style="font-size: 14px">
                                 CERRAR SESIÓN
                             </a>
