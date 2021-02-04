@@ -13,6 +13,7 @@
     <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -36,16 +37,20 @@
         header("location: Server/login.php");
     }
     $EliminarEspacios=str_replace(' ', '', $Nombre);
-    $Usuario=$EliminarEspacios.$Ap_pat; 
-    $sql = "SELECT * FROM movimientos WHERE Origen = '$Correo'";
-    $query=mysqli_query($conn,$sql);
-    if ($query) {
-        while ($datos=$query->fetch_array()) {
-            $Correos=$datos['Destino'];
-        }
+    $Usuario=$EliminarEspacios.$Ap_pat;  
+    if(!$_POST['txtBuscar']){
+        $sql = "SELECT DISTINCT Destino FROM movimientos WHERE Origen = '$Correo'";
+        
+        $texto="Buscar";
+    }else{
+        $buscar=$_POST['txtBuscar'];
+        $texto="$buscar";
+        $sql="SELECT DISTINCT Destino FROM movimientos WHERE  Destino LIKE  '%$buscar%'";
     }
-?>
-    <header class="fijado"> 
+    $query=mysqli_query($conn,$sql);
+    
+    ?>
+    <header class="fijado">
         <?php include("components/navbar2.php"); ?>
     </header>
     <ul class="nav justify-content-center nav_eys">
@@ -67,10 +72,27 @@
                 <!-- Inicia Columna 1 -->
                 <div class="row" style="background-color: white; height: 100%; border-radius: 5px;">
                     <div class="col" style="margin: 30px;">
-                        <form class="form-group" action="../../Server/contactos.php?c=<?=$Correo?>" method="POST" style="margin-top: 10px">
-                            <input name="txtBuscar" class="form-control" style="height: 50px" type="text" placeholder="Buscar">
+                        <form class="form-group" action="#" method="POST" style="margin-top: 10px">
+                            <table>
+                                <tr>
+                                    <td class="col-sm-7">
+                                        <input name="txtBuscar" class="form-control" style="height: 50px" type="text"
+                                            placeholder="<?=$texto?>">
+                                    </td>
+                                    <td><button class="btn-primary row-2 txtBuscar" id="btnBuscar"><i class="fa fa-search"  width="10" height="10"></i></button></td>
+                                </tr>
+                            </table>
                         </form>
-                        <a href="http://"><?=$Correos?></a>
+                        <?php 
+                            while($row= mysqli_fetch_assoc($query))	
+                            {
+                        ?>
+                            <p>
+                                <span><a href=""><?php echo $row['Destino'] ?></a></span>
+                            </p>
+                            <?php 
+                            }
+                        ?>
                     </div>
                 </div>
             </div> <!-- Termina Columna 1 -->
@@ -112,15 +134,15 @@
                                 <p class="statusMsg"></p>
                                 <form role="form" action="../../Server/paypalme.php" method="POST">
                                     <div class="form-group">
-                                      <h5 for="inputName">paypal.me/<?=$Usuario?></h5>
-                                        </div>
+                                        <h5 for="inputName">paypal.me/<?=$Usuario?></h5>
+                                    </div>
                                 </form>
                             </div>
 
                             <!-- Modal Footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary submitBtn"
-                                data-dismiss="modal">CERRAR</button>
+                                    data-dismiss="modal">CERRAR</button>
                             </div>
                         </div>
                     </div>

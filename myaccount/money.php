@@ -1,8 +1,28 @@
+<?php  
+  
+  include('../Server/Conexion.php'); // 
+  session_start();
+  $Correo = $_SESSION['Correo'];
+  $sql= "SELECT id FROM registro_usuario where Correo = '$Correo'"; 
+  $resultado= mysqli_query($conn,$sql);
+  $fila= $resultado->fetch_row();
+  $id = $fila[0];
+
+  $sql= "SELECT Nombre_banco,Numero_cuenta FROM cuenta_bancaria where id = '$id'AND Estatus='Activo'"; 
+  $resultado= mysqli_query($conn,$sql);
+
+  $sql2= "SELECT Tipo_tarjeta,Num_tarjeta FROM tarjeta_bancaria where id = '$id'AND Estatus='Activo'"; 
+  $resultado2= mysqli_query($conn,$sql2);
+
+?>
+
+                
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>PayPal: Cartera</title>
-	<meta charset="utf-8"/>
+    <title>PayPal: Cartera</title>
+    <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
     
         <!-- jQuery -->
@@ -19,84 +39,82 @@
     <link rel="stylesheet" type="text/css" href="resources/global/listado_tarjetas.css">
 </head>
 <body>
-	<header class="fijado">
-	<?php include("components/navbar2.php"); ?>
+    <header class="fijado">
+    <?php include("components/navbar2.php"); ?>
     </header>
     <section class="contenedor container">
         <div class="row contenido">
             <div class="col-sm-4"> <!-- Inicia Columna 1 -->
                 <div class="row">
-                    <a class="btn" href="../banking_services/bank_account.php">
+                    <a class="btn" href="../banking_services/bank_account2.php">
                         <img src="resources/icons/addBankIcon_fiList.svg">
                         <h4 class="h4" style="font-size: 13px; color: #0070ba; margin-top: 20px;">Asociar una cuenta bancaria</h4>
                     </a>
-                    <a class="btn" href="../banking_services/add_card.php">
+                    <a class="btn" href="../banking_services/add_card2.php">
                         <img src="resources/icons/addCardIcon.svg">
                         <h4 class="h4" style="font-size: 13px; color: #0070ba; margin-top: 20px;">Asociar tarjeta</h4>
                     </a>
                 </div>
                 <div style="margin-top: 50px">
                     <div class="list-group" id="list-tab" role="tablist">
-                        <a class="list-group-item list-group-item-action active" id="list-bank-list" data-toggle="list" href="#list-bank" role="tab" aria-controls="card">
+
+                        <?php $i=0; while($ver=mysqli_fetch_row($resultado)){ ?>
+                        <a class="list-group-item list-group-item-action <?php if($i==0){echo "active";} ?>" id="list-bank-list-<?php echo $i;?>" data-toggle="list" href="#list-bank-<?php echo $i;?>" role="tab" aria-controls="card">
                             <div class="row">
                                 <div class="col-4" style="margin-top: 5px">
                                     <img src="resources/images/generic_bank.webp" height="30px">
                                 </div>
                                 <div class="col-8" style="margin-left: -30px; margin-top: 5px">
-                                    <h6>BANCO <span>SANTANDER</span></h6>
-                                    <p style="font-size: 11px; margin-top: -8px; margin-bottom: 2px">Cuenta ••••5430</p>
+                                    <?php 
+                                            $Digitos = substr($ver[1], -4);
+                                            echo "<h6>BANCO <span>$ver[0]</span></h6>";
+                                            echo "<p style='font-size: 11px; margin-top: -8px; margin-bottom: 2px'>Cuenta ••••$Digitos</p>";
+                                    ?>
                                 </div>
                             </div>
-                        </a>
-                        <a class="list-group-item list-group-item-action" id="list-card-list" data-toggle="list" href="#list-card" role="tab" aria-controls="card">
+                        </a> <?php $i=$i+1; } ?>
+
+                        <?php $i=0; while($ver2=mysqli_fetch_row($resultado2)){ ?>
+                        <a class="list-group-item list-group-item-action" id="list-card-list-<?php echo $i;?>" data-toggle="list" href="#list-card-<?php echo $i;?>" role="tab" aria-controls="card">
                             <div class="row">
                                 <div class="col-4" style="margin-top: 5px">
-                                    <img src="resources/images/mastercard.png" height="30px">
+                                    <?php
+                                        switch ($ver2[0]) {
+                                            case 'Visa':
+                                                echo "<img src='resources/images/visa.png' height='30px'>";
+                                                break;
+                                            case 'MasterCard':
+                                                echo "<img src='resources/images/mastercard.png' height='30px'>";
+                                                break;
+                                            case 'American Express':
+                                                echo "<img src='resources/images/amex.webp' height='30px'>";
+                                                break;
+                                          }  
+                                    ?>
                                 </div>
                                 <div class="col-8" style="margin-left: -30px; margin-top: 5px">
-                                    <h6>Tarjeta <span>MasterCard</span></h6>
-                                    <p style="font-size: 11px; margin-top: -8px; margin-bottom: 2px">••••3312</p>
+                                    <?php
+                                        $Digitos2 = substr($ver2[1], -4);
+                                        echo "<h6>Tarjeta <span>$ver2[0]</span></h6>";
+                                        echo "<p style='font-size: 11px; margin-top: -8px; margin-bottom: 2px'>••••$Digitos2</p>";
+                                    ?>
                                 </div>
                             </div>
-                        </a>
+                        </a> <?php $i=$i+1; } ?>
                     </div>
                 </div>
             </div> <!-- Termina Columna 1 -->
             <div class="col-sm-8"> <!-- Inicia Columna 2 -->
                 <div style="margin-top: 30px">
                     <div class="tab-content" id="nav-tabContent">
-<!-- Cuenta Bancaria --><div class="tab-pane fade show active" id="list-bank" role="tabpanel" aria-labelledby="list-bank-list">
-                            <div style="display: grid; place-items:center;">
-                                <div class="info_bank"> 
-                                    <h6 style="bottom: 2px; left:15px;position: absolute;">••••5430</h6>
-                                </div>
-                            </div>
-                            <div style="margin-top: 50px; text-align: center;">
-                                <h4 class="display-4" style="font-size: 20px">BANCO SANTANDER</h4>
-                                <h4 class="display-4" style="font-size: 20px; margin-bottom: 30px">Cuenta ••••5430</h4>
-                                <hr style="width: 55%">
-                                <h4 class="h4" style="font-size: 14px;">Transferencias automáticas<p class="display-4" style="font-size: 20px;">si</p></h4>
-                                <label><a href="#">Actualización</a><a href="#" style="margin-left: 20px">Eliminar</a></label>
-                                <hr style="width: 55%">
-                            </div>
-                        </div>
-<!-- Para la Tarjeta --><div class="tab-pane fade" id="list-card" role="tabpanel" aria-labelledby="list-card-list">
-                            <div style="display: grid; place-items:center;">
-                                <div class="info_tarjeta">
-                                    <img style="position: absolute; top: 65px; left: 110px" src="resources/images/mastercard.png" height="50px">
-                                    <h6 style="bottom: 2px; left:15px;position: absolute;color: white">••••3312</h6>
-                                </div>
-                            </div>
-                            <div style="margin-top: 50px; text-align: center;">
-                                <h4 class="display-4" style="font-size: 25px">Tarjeta MasterCard</h4>
-                                <h4 class="display-4" style="font-size: 20px; margin-bottom: 30px;">••••3312</h4>
-                                <hr style="width: 55%">
-                                <h4 class="h4" style="font-size: 14px;">Fecha de vencimiento<p class="display-4" style="font-size: 20px;">03/28</p></h4>
-                                <h4 class="h4" style="font-size: 14px;">Preferida</h4>
-                                <label><a href="#">Actualización</a><a href="#" style="margin-left: 20px">Eliminar</a></label>
-                                <hr style="width: 55%">
-                            </div>
-                        </div>
+                        <?php
+                            $i=0;
+                            $sql4= "SELECT Nombre_banco,Numero_cuenta FROM cuenta_bancaria where id = '$id' AND Estatus='Activo'"; 
+                            $aux= mysqli_query($conn,$sql4);
+                            while($ver=mysqli_fetch_row($aux)){
+                                echo $ver[1];
+                            } 
+                        ?>
                     </div>
                 </div>
             </div> <!-- Termina Columna 2 -->

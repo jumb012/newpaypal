@@ -14,7 +14,8 @@
         die() ;
     }
     $Contraseña=$array['RecuperarC'];
-    $sql2="UPDATE registro_usuario SET Contraseña='$Contraseña' WHERE Correo='$Correo'";
+    $Contraseña_h=md5($Contraseña);
+    $sql2="UPDATE registro_usuario SET Contraseña='$Contraseña_h' WHERE Correo='$Correo'";
     $query2=mysqli_query($conn,$sql2);
     $sql3="DELETE FROM recuperar WHERE Correo='$Correo'";
     $query3=mysqli_query($conn,$sql3);

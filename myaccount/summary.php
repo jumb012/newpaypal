@@ -22,14 +22,13 @@
     session_start();
     $Correo=$_SESSION['Correo'];
     $Nombre=$_SESSION['Nombre'];
-    $Id_Usuario=$_SESSION['Id'];
     if(!isset($Correo)){
         header("location: Server/login.php");
     }
-    $sql="SELECT * FROM saldo WHERE id ='$Id_Usuario'";
-    $q = mysqli_query($conn,$sql);
-    $array = mysqli_fetch_array($q);
-    $saldo = $array['saldo'];
+    $sql="SELECT Saldo FROM registro_usuario WHERE Correo ='$Correo'";
+    $resultado= mysqli_query($conn,$sql);
+    $fila= $resultado->fetch_row();
+    $Saldo= $fila[0];
 ?>   
 <body>
 	<header class="fijado">
@@ -43,7 +42,7 @@
                     <div class="col-lg-11 cmp" style="padding-left: 25px; padding-right: 25px">
                         <a class="btn" href="money.php"><h5 class="h6" style="color: #0070ba; margin-top: 10px">Nuevos pagos recibidos</h5></a>
                         <br>
-                        <label><h3 class="display-4" style="font-size: 50px; margin-top: -10px;margin-bottom: -7px">$<?=$saldo?></h3></label>
+                        <label><h3 class="display-4" style="font-size: 50px; margin-top: -10px;margin-bottom: -7px">$ <?php echo $Saldo ?></h3></label>
                         <br>
                         <label><h1 class="h6" style="font-size: 12.5px; margin-left: 30px; color: #687173">
                             Las transferencias automáticas a su cuenta bancaria empiezan a las 12 a. m. CT.

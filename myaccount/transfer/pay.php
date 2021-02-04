@@ -2,6 +2,14 @@
 <html lang="es">
 <head>
 	<title>PayPal: enviar pago</title>
+    <?php
+    if(isset($_GET['guardado']))
+        {
+
+            echo "<script>alert('Datos guardados correctamente');</script>";
+        }
+
+     ?>
 	<meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
     
@@ -18,11 +26,9 @@
     <link rel="stylesheet" type="text/css" href="../resources/navbar2/navbar2.css">
 </head>
 <body>
-    <script type="text/javascript">
-    	$(function () {
-  			$('[data-toggle="popover"]').popover()
-		})
-	</script>
+    <script type="text/javascript">$(function () {
+  $('[data-toggle="popover"]').popover()
+})</script>
 	<header class="fijado">
 	<?php include("components/navbar2.php"); ?>
     </header>
@@ -43,8 +49,9 @@
                 <div class="row" style="background-color: white; height: 100%; border-radius: 5px;">
                     <div class="col" style="margin: 30px;">
                     <h5 class="h5" style="color: #333;">Enviar pagos</h5>
-                    <form class="form-group" style="margin-top: 25px">
-                        <input class="form-control" style="height: 50px" type="text" placeholder="Nombre, correo electrónico o número de celular">
+                    <form class="form-group" style="margin-top: 25px" method="post" action="../../Server/enviar_dinero.php">
+                        <input class="form-control" style="height: 50px" type="text" placeholder="Nombre, correo electrónico o número de celular" name="txtBuscar">
+                        <input class="form-control" style="height: 50px" type="number" step=".01" placeholder="Monto" name="intMonto">
                         <div class="row" style="position: relative; margin-top: 30px;">
                             <button class="btn btn-primary" type="summit" style="margin-left: 15px; border-radius: 30px; height: 50px; width: 120px;">Siguiente</button>
                             <a 
@@ -55,9 +62,11 @@
                             data-content="Envíe pagos a cualquier persona que tenga una dirección de correo electrónico o número de teléfono celular y se abonará en su cuenta de PayPal. Si el destinatario todavía no tiene una cuenta de PayPal, podrá crear una gratis en cuestión de segundos." 
                             style="position: absolute; top: 0; right: 0;">
                                 <h6 class="h6" style="font-size: 12px">¿Cómo funciona?</h6>
-                            </a>
+                            
+
                         </div>
                     </form></div>
+                    </a>
                 </div>
             </div> <!-- Termina Columna 1 -->
             <div class="col-sm-5"> <!-- Inicia Columna 2 -->

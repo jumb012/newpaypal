@@ -14,6 +14,9 @@
                         <button class="btn btn-danger btn-close float-right">
                             × Cerrar
                         </button>
+                        <h5 class="py-2 text-white">
+                            Jassiel Martínez Beltrán
+                        </h5>
                     </div>
                     <ul class="navbar-nav">
                         <li class="nav-item active" style="margin-left: 10px">
@@ -43,16 +46,6 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="" style="font-size: 14px">
-                                <img src="https://www.paypalobjects.com/ui-web/icons/1-0-0/notifications.svg" height=30px>
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" style="font-size: 14px">
-                                <img src="https://www.paypalobjects.com/ui-web/icons/1-0-0/settings.svg" height=25px>
-                            </a>
-                        </li>
                         <li class="nav-item active">
                             <a class="nav-link linea" href="../../Server/logout.php" style="font-size: 14px">
                                 CERRAR SESIÓN
