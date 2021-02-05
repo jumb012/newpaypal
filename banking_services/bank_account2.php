@@ -35,8 +35,16 @@
           <h5 class="display-4" style="text-align: center; font-size: 25px; margin-top: 35px; margin-bottom: 25px">Asociar una cuenta bancaria</h5>
           <form id="BankAccountForm" action="../Server/registro_cuenta2.php" method="post">
             <div class="form-group">
-              <input style="margin-top: 5px" type="text" class="form-control" name="Nombre_banco" required placeholder="Nombre del banco">
-              <input style="margin-top: 5px" type="text" class="form-control" name="Numero_cuenta" required placeholder="Número de cuenta">
+              <!--<input style="margin-top: 5px" type="text" class="form-control" name="Nombre_banco" required placeholder="Nombre del banco"> -->
+              <SELECT style="margin-top: 5px" class="form-control" name="Nombre_banco" required>
+              <option selected>Seleccione su Banco</option>
+              <option value="BBVA">BBVA</option>
+              <option value="BANORTE">BANORTE</option>
+              <option value="HSBC">HSBC</option>
+              
+              </SELECT>
+              
+              <input style="margin-top: 5px" type="text" class="form-control" name="Numero_cuenta" required placeholder="Número de cuenta" minlength="18" maxlength="18">
             </div>
             <div style="background-color: #f5f7fa;" class="container">
               <label><h5 class="h6" style="font-size: 13px; margin-top: 10px">Nombre:</h5></label><br>

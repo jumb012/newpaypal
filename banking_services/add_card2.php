@@ -42,7 +42,7 @@
           </h6></label>
           <form id="AddCardForm" action="../Server/registro_tarjeta2.php" method="post">
             <div class="form-group">
-              <input style="margin-top: 5px" type="text" class="form-control" name="Num_tarjeta" required placeholder="N.° tarjeta débito o crédito">
+              <input style="margin-top: 5px" type="text" class="form-control" name="Num_tarjeta" required placeholder="N.° tarjeta débito o crédito" minlength="16" maxlength="16">
               <select style="margin-top: 5px" class="form-control" name="Tipo_tarjeta" required>
                 <option selected>Seleccione su tipo de tarjeta</option>
                 <option value="Visa">Visa</option>
@@ -52,7 +52,7 @@
               <input style="margin-top: 5px" type="month" class="form-control" name="Vencimiento" required  >
               <div class="row">
                 <div class="col-9">
-                    <input style="margin-top: 5px" type="text" class="form-control" name="Codigo_seguridad" required placeholder="Código de seguridad">
+                    <input style="margin-top: 5px" type="text" class="form-control" name="Codigo_seguridad" required placeholder="Código de seguridad" minlength="3" maxlength="3">
                 </div>
                 <div class="col-2">
                     <img src="https://cdn2.iconfinder.com/data/icons/credit-cards-6/156/security_code_back-512.png" height="50">
