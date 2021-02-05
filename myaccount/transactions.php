@@ -188,7 +188,11 @@
                                     <td><?php echo $row['Tipo'];?></td>
                                     <td><?php echo $row['Destino'];?></td>
                                     <td><?php echo $row['Descripción'];?></td>
-                                    <td><?php echo money_format('-  %(#5n', $row['Monto']) . "\n";?></td>
+                                    <td><?php if($Correo == $row['Origen']) {
+                                        echo "- $".$row["Monto"]."\n";
+                                    }else{
+                                        echo "+ $".$row["Monto"]."\n";
+                                    } ?></td>
                                     <td><?php echo $row['Comisión'];?></td>
                                 </tr>
                                 <?php 

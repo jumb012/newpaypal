@@ -102,10 +102,15 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 while($row= mysqli_fetch_assoc($query)){
+    if($Correo == $row['Origen']) {
+    $Monto = "- $".$row["Monto"]."\n";
+    }else{
+    $Monto = "+ $".$row["Monto"]."\n";
+    }
     $pdf->Cell(26,10,$row['Fecha'],0,0,'',0);
     $pdf->Cell(60,10,$row['Descripción'],0,0,'',0);
     $pdf->Cell(60,10,$row['Destino'],0,0,'',0);
-    $pdf->Cell(20,10,$row['Monto'],0,0,'R',0);
+    $pdf->Cell(20,10,$Monto,0,0,'R',0);
     $pdf->Cell(25,10,$row['Comisión'],0,1,'R',0);
     $pdf->SetLineWidth(0.1);
     $pdf->SetDash(.5,1);

@@ -8,6 +8,18 @@ if (isset($_POST['txtBuscar'])) {
     $Buscar= $_POST['txtBuscar'];
     $Monto = $_POST['intMonto'];
     $Correo = $_SESSION['Correo'];
+    $Descripcion = $_POST['txtDescripcion'];
+    $Tipo = $_POST['txtTipo'];
+    $Fecha = $_POST['txtFecha'];
+    $Comision = 0.00;
+
+    $sql5= "SELECT id FROM registro_usuario where Correo = '$Correo'"; 
+    $resultado5= mysqli_query($conn,$sql5);
+    $fila5= $resultado5->fetch_row();
+    $id= $fila5[0];
+
+    $sql6= "INSERT INTO movimientos(Id_Usuario,Origen,Destino,Monto,Descripción,Tipo,Fecha,Comisión) values('$id','$Correo','$Buscar','$Monto','$Descripcion','$Tipo','$Fecha','$Comision')";
+    $resultado6= mysqli_query($conn,$sql6);
 
     $sql= "SELECT Saldo FROM registro_usuario where Correo = '$Buscar'"; 
     $resultado= mysqli_query($conn,$sql);
