@@ -54,7 +54,7 @@
                         <input class="form-control" style="height: 50px" type="number" step=".01" placeholder="Monto" name="intMonto">
                         <input class="form-control" style="height: 50px" type="text" placeholder="Descripcion" name="txtDescripcion">
                         <input type="hidden" name="txtTipo" value="transferencia">
-                        <input type="date" name="txtFecha" value="<?php echo date("Y-m-d")?>" hidden>
+                        <input type="datetime-local" name="txtFecha" value="<?php echo date("Y-m-d");?>" hidden>
                         <div class="row" style="position: relative; margin-top: 30px;">
                             <button class="btn btn-primary" type="summit" style="margin-left: 15px; border-radius: 30px; height: 50px; width: 120px;">Siguiente</button>
                             <a 

@@ -39,8 +39,12 @@
                     <div class="col" style="margin: 30px;">
                     <h5 class="h5" style="color: #333;">Solicite un pago a cualquier persona</h5>
                     <label style="margin-top: 10px">Simplemente use su correo electrónico o número de celular para solicitar el pago.</label>
-                    <form class="form-group" style="margin-top: 10px">
-                        <input class="form-control" style="height: 50px" type="text" placeholder="Nombre, correo electrónico o número de celular">
+                    <form class="form-group" style="margin-top: 10px" method="post" action="../../Server/solicitar_dinero.php">
+                        <input class="form-control" style="height: 50px" type="text" placeholder="Correo electrónico" name="txtBuscar">
+                        <input class="form-control" style="height: 50px" type="number" step=".01" placeholder="Monto" name="intMonto">
+                        <input class="form-control" style="height: 50px" type="text" placeholder="Descripcion" name="txtDescripcion">
+                        <input type="hidden" name="txtTipo" value="solicitud">
+                        <input type="datetime-local" name="txtFecha" value="<?php echo date("Y-m-d");?>" hidden>
                         <div class="row" style="position: relative; margin-top: 30px;">
                             <button class="btn btn-primary" type="summit" style="margin-left: 15px; border-radius: 30px; height: 50px; width: 120px;">Siguiente</button>
                         </div>

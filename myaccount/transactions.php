@@ -85,7 +85,7 @@
             }      
 		}
     }else{
-        $sql = "SELECT * FROM movimientos WHERE Origen = '$Correo'"; 
+        $sql = "SELECT * FROM movimientos WHERE Origen = '$Correo' or Destino ='$Correo'"; 
         $query=mysqli_query($conn,$sql);
         $placeHolderMov="Buscar movimientos";
         $placeHolderFec2="dd/mm/aaaa";
@@ -172,6 +172,7 @@
                                 <tr>
                                     <td class="align-top">Fecha</td>
                                     <td>Tipo</td>
+                                    <td>Origen</td>
                                     <td>Destino</td>
                                     <td>Descripción</td>
                                     <td>Monto</td>
@@ -186,6 +187,7 @@
                                 <tr class="align-bottom">
                                     <td><?php echo $row['Fecha'];?></td>
                                     <td><?php echo $row['Tipo'];?></td>
+                                    <td><?php echo $row['Origen'];?></td>
                                     <td><?php echo $row['Destino'];?></td>
                                     <td><?php echo $row['Descripción'];?></td>
                                     <td><?php if($Correo == $row['Origen']) {

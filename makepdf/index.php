@@ -58,10 +58,11 @@ class PDF extends FPDF
     // Salto de línea
     $this->Ln(15);
     $this->Cell(26,10,utf8_decode('Fecha'),0,0,'',0);
-    $this->Cell(60,10,utf8_decode('Descripción'),0,0,'',0);
-    $this->Cell(60,10,utf8_decode('Destino'),0,0,'',0);
+    $this->Cell(25,10,utf8_decode('Descripción'),0,0,'',0);
+    $this->Cell(50,10,utf8_decode('Origen'),0,0,'',0);
+    $this->Cell(50,10,utf8_decode('Destino'),0,0,'',0);
     $this->Cell(20,10,utf8_decode('Monto'),0,0,'R',0);
-    $this->Cell(25,10,utf8_decode('Comisión'),0,1,'R',0);
+    $this->Cell(20,10,utf8_decode('Comisión'),0,1,'R',0);
     $this->Line(10,65,200,65);
 }
 
@@ -93,7 +94,7 @@ if(isset($_GET['b'])){
     $buscar=$_GET['b'];
     $sql="SELECT * FROM movimientos WHERE  Tipo  LIKE  '%$buscar%' OR  Destino LIKE  '%$buscar%' OR Monto LIKE  '%$buscar%' OR Descripción LIKE  '%$buscar%' OR Fecha  LIKE  '%$buscar%'";
 }else{
-    $sql = "SELECT * FROM movimientos WHERE Origen = '$Correo'"; 
+    $sql = "SELECT * FROM movimientos WHERE Origen = '$Correo' or Destino ='$Correo'"; 
 }
 $query=mysqli_query($conn,$sql);
 // Creación del objeto de la clase heredada
@@ -108,10 +109,11 @@ while($row= mysqli_fetch_assoc($query)){
     $Monto = "+ $".$row["Monto"]."\n";
     }
     $pdf->Cell(26,10,$row['Fecha'],0,0,'',0);
-    $pdf->Cell(60,10,$row['Descripción'],0,0,'',0);
-    $pdf->Cell(60,10,$row['Destino'],0,0,'',0);
+    $pdf->Cell(25,10,$row['Descripción'],0,0,'',0);
+    $pdf->Cell(50,10,$row['Origen'],0,0,'',0);
+    $pdf->Cell(50,10,$row['Destino'],0,0,'',0);
     $pdf->Cell(20,10,$Monto,0,0,'R',0);
-    $pdf->Cell(25,10,$row['Comisión'],0,1,'R',0);
+    $pdf->Cell(20,10,$row['Comisión'],0,1,'R',0);
     $pdf->SetLineWidth(0.1);
     $pdf->SetDash(.5,1);
     $pdf->SetDrawColor(200,200,200);
